@@ -1,17 +1,16 @@
 "use client";
-
 import React, { useState } from 'react';
 
 export default function Counter() {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState<number>(0);
 
     const incrementCount = () => {
-        setCount(count + 1);
+        setCount((prevCount: number) => prevCount + 1);
     };
 
     const decrementCount = () => {
         if (count > 0) {
-            setCount(count - 1);
+            setCount((prevCount: number) => prevCount - 1);
         }
     };
 
@@ -24,5 +23,6 @@ export default function Counter() {
         </div>
     );
 }
+
 
 
